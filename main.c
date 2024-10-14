@@ -17,6 +17,11 @@ int main(){
 
     printf("\n\n\n\n\n\n\n\n");
 
+    char X, O; //
+    int field;
+    printf("Select your field!\n");
+    scanf("%d", &field);
+
     printf("      1     |     2     |     3     \n");
     printf("- - - - - - - - - - - - - - - - - - \n");
     printf("      4     |     5     |     6     \n");
@@ -25,11 +30,11 @@ int main(){
 
     printf("\n\n\n\n\n\n\n\n");
 
-    printf("            |           |           \n");
+    printf("      %d     |          |           \n", field);
     printf("- - - - - - - - - - - - - - - - - - \n");
     printf("            |           |           \n");
     printf("- - - - - - - - - - - - - - - - - - \n");
-    printf("            |           |           \n");
+    printf("            |           |            \n");
 
     return 0;
 }
