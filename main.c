@@ -42,7 +42,9 @@ int main(){
         }
     }
 
-    printf("      %d     |          |           \n", matrix[0][0]);
+//  test empty matrix (to do)
+
+    printf("      %c     |          |           \n", emptyMatrix[0][0]);
     printf("- - - - - - - - - - - - - - - - - - \n");
     printf("            |           |           \n");
     printf("- - - - - - - - - - - - - - - - - - \n");
