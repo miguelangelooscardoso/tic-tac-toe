@@ -42,7 +42,7 @@ int main()
         {
             for (int j = 0; j < 3; j++)
             {
-                if (matrix[i][j] == field)
+                if (matrix[i][j] == field && emptyMatrix[i][j] == '\0')
                 {
                     if (numJogadas % 2 != 0)
                     {
