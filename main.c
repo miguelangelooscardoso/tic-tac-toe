@@ -1,4 +1,5 @@
 #include <stdio.h>
+void checkWinner();
 
 int main()
 {
@@ -42,8 +43,10 @@ int main()
         {
             for (int j = 0; j < 3; j++)
             {
+
                 if (matrix[i][j] == field && emptyMatrix[i][j] == '\0')
                 {
+
                     if (numJogadas % 2 != 0)
                     {
                         emptyMatrix[i][j] = 'X';
@@ -52,7 +55,6 @@ int main()
                     {
                         emptyMatrix[i][j] = 'O';
                     }
-
                     numJogadas++;
                 }
             }
@@ -65,7 +67,42 @@ int main()
         printf("      %c     |     %c     |     %c     \n", emptyMatrix[1][0], emptyMatrix[1][1], emptyMatrix[1][2]);
         printf("- - - - - - - - - - - - - - - - - - - -\n");
         printf("      %c     |     %c     |     %c     \n", emptyMatrix[2][0], emptyMatrix[2][1], emptyMatrix[2][2]);
+
+        // primeiro preenche a matrix e só depois verifica
+
+        if (emptyMatrix[0][0] == emptyMatrix[1][1] && emptyMatrix[0][0] == emptyMatrix[2][2] && emptyMatrix[0][0] != '\0')
+        {
+            printf("Winner!\n");
+            break;
+        }
+        else if (emptyMatrix[0][2] == emptyMatrix[1][1] && emptyMatrix[0][2] == emptyMatrix[2][0] && emptyMatrix[0][2] != '\0')
+        {
+            printf("Winner!\n");
+            break;
+        }
+
     }
 
     return 0;
+}
+
+void checkWinner()
+{
+
+    // Condições para ganhar:
+
+    // 1. // diagonal principal
+    // if(emptyMatrix[0][0] == emptyMatrix[1][1] && emptyMatrix[0][0] == emptyMatrix[2][2] && emptyMatrix[0][0] != '\0'){
+    //     printf("Winner!");
+    // }
+    // 2. // diagonal secundária
+    //     emptyMatrix[0][2] == emptyMatrix[1][1] && emptyMatrix[0][2] == emptyMatrix[2][0] && emptyMatrix[0][2] != '\0'
+    // 3. // linha
+    //     emptyMatrix[0][0] == emptyMatrix[0][1] == emptyMatrix[0][2] && emptyMatrix[0][0] != '\0'
+    //     emptyMatrix[1][0] == emptyMatrix[1][1] == emptyMatrix[1][2] && emptyMatrix[1][0] != '\0'
+    //     emptyMatrix[2][0] == emptyMatrix[2][1] == emptyMatrix[2][2] && emptyMatrix[2][0] != '\0'
+    // 4. // coluna
+    //     emptyMatrix[0][0] == emptyMatrix[1][0] == emptyMatrix[2][0] && emptyMatrix[0][0] != '\0'
+    //     emptyMatrix[0][1] == emptyMatrix[1][1] == emptyMatrix[2][1] && emptyMatrix[0][1] != '\0'
+    //     emptyMatrix[0][2] == emptyMatrix[1][2] == emptyMatrix[2][2] && emptyMatrix[0][2] != '\0'
 }
