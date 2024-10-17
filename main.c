@@ -44,7 +44,15 @@ int main()
             {
                 if (matrix[i][j] == field)
                 {
-                    emptyMatrix[i][j] = 'X';
+                    if (numJogadas % 2 != 0)
+                    {
+                        emptyMatrix[i][j] = 'X';
+                    }
+                    else
+                    {
+                        emptyMatrix[i][j] = 'O';
+                    }
+
                     numJogadas++;
                 }
             }
