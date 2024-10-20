@@ -80,21 +80,19 @@ int main()
             printf("Player %c won!\n", emptyMatrix[0][2]);
             break;
         }
-        else if (
-            (emptyMatrix[0][0] == emptyMatrix[0][1] && emptyMatrix[0][0] == emptyMatrix[0][2] && emptyMatrix[0][0] != '\0') ||
-            (emptyMatrix[1][0] == emptyMatrix[1][1] && emptyMatrix[1][0] == emptyMatrix[1][2] && emptyMatrix[1][0] != '\0') ||
-            (emptyMatrix[2][0] == emptyMatrix[2][1] && emptyMatrix[2][0] == emptyMatrix[2][2] && emptyMatrix[2][0] != '\0'))
+
+        for (int k = 0; k < 3; k++)
         {
-            printf("Winner!\n");
-            break;
-        }
-        else if (
-            (emptyMatrix[0][0] == emptyMatrix[1][0] && emptyMatrix[0][0] == emptyMatrix[2][0] && emptyMatrix[0][0] != '\0') ||
-            (emptyMatrix[0][1] == emptyMatrix[1][1] && emptyMatrix[0][1] == emptyMatrix[2][1] && emptyMatrix[0][1] != '\0') ||
-            (emptyMatrix[0][2] == emptyMatrix[1][2] && emptyMatrix[0][2] == emptyMatrix[2][2] && emptyMatrix[0][2] != '\0'))
-        {
-            printf("Winner!\n");
-            break;
+            if (emptyMatrix[k][0] == emptyMatrix[k][1] && emptyMatrix[k][0] == emptyMatrix[k][2] && emptyMatrix[k][0] != '\0')
+            {
+                printf("Player %c won!\n", emptyMatrix[k][0]);
+                return 1; // break isn't working
+            }
+            else if (emptyMatrix[0][k] == emptyMatrix[1][k] && emptyMatrix[0][k] == emptyMatrix[2][k] && emptyMatrix[0][k] != '\0')
+            {
+                printf("Player %c won!\n", emptyMatrix[0][k]);
+                return 1; // break isn't working
+            }
         }
     }
 
