@@ -72,12 +72,12 @@ int main()
 
         if (emptyMatrix[0][0] == emptyMatrix[1][1] && emptyMatrix[0][0] == emptyMatrix[2][2] && emptyMatrix[0][0] != '\0')
         {
-            printf("Winner!\n");
+            printf("Player %c won!\n", emptyMatrix[0][0]);
             break;
         }
         else if (emptyMatrix[0][2] == emptyMatrix[1][1] && emptyMatrix[0][2] == emptyMatrix[2][0] && emptyMatrix[0][2] != '\0')
         {
-            printf("Winner!\n");
+            printf("Player %c won!\n", emptyMatrix[0][2]);
             break;
         }
         else if (
@@ -97,6 +97,8 @@ int main()
             break;
         }
     }
+
+    printf("Draw!\n");
 
     return 0;
 }
