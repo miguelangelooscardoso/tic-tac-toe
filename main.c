@@ -80,7 +80,22 @@ int main()
             printf("Winner!\n");
             break;
         }
-
+        else if (
+            (emptyMatrix[0][0] == emptyMatrix[0][1] && emptyMatrix[0][0] == emptyMatrix[0][2] && emptyMatrix[0][0] != '\0') ||
+            (emptyMatrix[1][0] == emptyMatrix[1][1] && emptyMatrix[1][0] == emptyMatrix[1][2] && emptyMatrix[1][0] != '\0') ||
+            (emptyMatrix[2][0] == emptyMatrix[2][1] && emptyMatrix[2][0] == emptyMatrix[2][2] && emptyMatrix[2][0] != '\0'))
+        {
+            printf("Winner!\n");
+            break;
+        }
+        else if (
+            (emptyMatrix[0][0] == emptyMatrix[1][0] && emptyMatrix[0][0] == emptyMatrix[2][0] && emptyMatrix[0][0] != '\0') ||
+            (emptyMatrix[0][1] == emptyMatrix[1][1] && emptyMatrix[0][1] == emptyMatrix[2][1] && emptyMatrix[0][1] != '\0') ||
+            (emptyMatrix[0][2] == emptyMatrix[1][2] && emptyMatrix[0][2] == emptyMatrix[2][2] && emptyMatrix[0][2] != '\0'))
+        {
+            printf("Winner!\n");
+            break;
+        }
     }
 
     return 0;
@@ -105,4 +120,5 @@ void checkWinner()
     //     emptyMatrix[0][0] == emptyMatrix[1][0] == emptyMatrix[2][0] && emptyMatrix[0][0] != '\0'
     //     emptyMatrix[0][1] == emptyMatrix[1][1] == emptyMatrix[2][1] && emptyMatrix[0][1] != '\0'
     //     emptyMatrix[0][2] == emptyMatrix[1][2] == emptyMatrix[2][2] && emptyMatrix[0][2] != '\0'
+    // 5. verificar se está tudo preenchido antes de dar o empate
 }
