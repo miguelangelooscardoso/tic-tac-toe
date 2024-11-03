@@ -1,23 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 void checkWinner();
 
 int main()
 {
-    //    printf("************************************\n");
-    printf("*********                   ********\n");
-    printf("********                     *******\n");
-    printf("*******                       ******\n");
-    printf("*****                          *****\n");
-    printf("****                            ****\n");
-    printf("***    Welcome to Tic Tac Toe!   ***\n");
-    printf("****                            ****\n");
-    printf("*****                          *****\n");
-    printf("*******                       ******\n");
-    printf("********                     *******\n");
-    printf("*********                   ********\n");
-    //    printf("************************************\n");
+    puts("************************************\n");
+    puts("       Welcome to Tic Tac Toe!      \n");
+    puts("************************************\n");
 
-    printf("\n\n\n\n");
+    printf("");
 
     int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     printf("      %d     |     %d     |     %d     \n", matrix[0][0], matrix[0][1], matrix[0][2]);
@@ -37,6 +29,7 @@ int main()
 
         int field;
         printf("Select your field!\n");
+        printf(">");
         scanf("%d", &field);
 
         for (int i = 0; i < 3; i++)
@@ -60,13 +53,14 @@ int main()
             }
         }
 
+        system("clear");
         //  test empty matrix (to do)
 
-        printf("      %c     |     %c     |     %c     \n", emptyMatrix[0][0], emptyMatrix[0][1], emptyMatrix[0][2]);
+        printf("      %c     |     %c     |     %c     \n", emptyMatrix[0][0] ? emptyMatrix[0][0] : ' ', emptyMatrix[0][1] ? emptyMatrix[0][1] : ' ', emptyMatrix[0][2] ? emptyMatrix[0][2] : ' ');
         printf("- - - - - - - - - - - - - - - - - - - -\n");
-        printf("      %c     |     %c     |     %c     \n", emptyMatrix[1][0], emptyMatrix[1][1], emptyMatrix[1][2]);
+        printf("      %c     |     %c     |     %c     \n", emptyMatrix[1][0] ? emptyMatrix[1][0] : ' ', emptyMatrix[1][1] ? emptyMatrix[1][1] : ' ', emptyMatrix[1][2] ? emptyMatrix[1][2] : ' ');
         printf("- - - - - - - - - - - - - - - - - - - -\n");
-        printf("      %c     |     %c     |     %c     \n", emptyMatrix[2][0], emptyMatrix[2][1], emptyMatrix[2][2]);
+        printf("      %c     |     %c     |     %c     \n", emptyMatrix[2][0] ? emptyMatrix[2][0] : ' ', emptyMatrix[2][1] ? emptyMatrix[2][1] : ' ', emptyMatrix[2][2] ? emptyMatrix[2][2] : ' ');
 
         // primeiro preenche a matrix e só depois verifica
 
@@ -96,9 +90,11 @@ int main()
         }
     }
 
-    printf("Draw!\n");
-
-    return 0;
+    if (numJogadas > maxJogadas)
+    {
+        printf("Draw!\n");
+        return 0; // Exit the game
+    }
 }
 
 void checkWinner()
