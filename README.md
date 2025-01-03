@@ -1,6 +1,6 @@
 # Tic Tac Toe - Jogo da Velha
 
-Este é um simples jogo da velha (Tic Tac Toe) implementado em C. O jogo permite que dois jogadores joguem alternadamente no terminal, usando os números de 1 a 9 para selecionar suas jogadas. O objetivo do jogo é formar uma linha, coluna ou diagonal com três símbolos iguais, seja 'X' ou 'O'.
+Este é um simples jogo da velha (Tic Tac Toe) implementado em C. O jogo permite que dois jogadores joguem alternadamente no terminal, usando os números de 1 a 9 para selecionar suas jogadas. O objetivo é alinhar três símbolos em uma linha, coluna ou diagonal.
 
 ## Como Jogar
 
@@ -20,19 +20,18 @@ Este é um simples jogo da velha (Tic Tac Toe) implementado em C. O jogo permite
 ### Como executar o código
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/tic-tac-toe.git
-   
+    ```bash
+    git clone https://github.com/seu-usuario/tic-tac-toe.git
+    ```
 2. Acesse a pasta do projeto:
-   ```
-cd tic-tac-toe
-
-4. Compile o código:
-
-gcc main.c -o main
-
+    ```bash
+    cd tic-tac-toe
+    ```
+3. Compile o código:
+    ```bash
+    gcc main.c -o main
+    ```
 4. Execute o jogo:
-
-./main
-```
-
+    ```bash
+    ./main
+    ```
