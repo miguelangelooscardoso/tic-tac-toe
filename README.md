@@ -24,9 +24,10 @@ Este é um simples jogo da velha (Tic Tac Toe) implementado em C. O jogo permite
    git clone https://github.com/seu-usuario/tic-tac-toe.git
    
 2. Acesse a pasta do projeto:
+   ```
 cd tic-tac-toe
 
-3. Compile o código:
+4. Compile o código:
 
 gcc main.c -o main
 
